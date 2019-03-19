@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="Socket1 Socket的基本操作1.1 创建Socket socket()函数int socket(int domain, int type, int protocol); domain：协议族，常用的协议族有，AF_INET、AF_INET6、AF_LOCAL（或称AF_UNIX，Unix域socket）、AF_ROUTE等等。 type:指定socket类型。常用的socket类型有，S">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/03/08/hello-world/index.html">
+<meta property="og:title" content="Socket编程">
+<meta property="og:url" content="http://yoursite.com/2019/03/08/Socket编程/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Socket1 Socket的基本操作1.1 创建Socket socket()函数int socket(int domain, int type, int protocol); domain：协议族，常用的协议族有，AF_INET、AF_INET6、AF_LOCAL（或称AF_UNIX，Unix域socket）、AF_ROUTE等等。 type:指定socket类型。常用的socket类型有，S">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-08T06:34:54.235Z">
+<meta property="og:image" content="http://yoursite.com/images/socket客户端服务器通讯.jpg">
+<meta property="og:updated_time" content="2019-03-08T07:50:14.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Socket编程">
+<meta name="twitter:description" content="Socket1 Socket的基本操作1.1 创建Socket socket()函数int socket(int domain, int type, int protocol); domain：协议族，常用的协议族有，AF_INET、AF_INET6、AF_LOCAL（或称AF_UNIX，Unix域socket）、AF_ROUTE等等。 type:指定socket类型。常用的socket类型有，S">
+<meta name="twitter:image" content="http://yoursite.com/images/socket客户端服务器通讯.jpg">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/08/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/08/Socket编程/">
 
 
 
 
 
-  <title>Hello World | Hexo</title>
+  <title>Socket编程 | Hexo</title>
   
 
 
@@ -232,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/Socket编程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wshwsh12">
@@ -249,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Socket编程</h1>
         
 
         <div class="post-meta">
@@ -261,7 +263,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-08T14:34:54+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-08T14:54:40+08:00">
                 2019-03-08
               </time>
             
@@ -299,15 +301,29 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h1><h2 id="1-Socket的基本操作"><a href="#1-Socket的基本操作" class="headerlink" title="1 Socket的基本操作"></a>1 Socket的基本操作</h2><h3 id="1-1-创建Socket-socket-函数"><a href="#1-1-创建Socket-socket-函数" class="headerlink" title="1.1 创建Socket socket()函数"></a>1.1 创建Socket socket()函数</h3><p><code>int socket(int domain, int type, int protocol);</code></p>
+<p>domain：协议族，常用的协议族有，<strong>AF_INET</strong>、AF_INET6、AF_LOCAL（或称AF_UNIX，Unix域socket）、AF_ROUTE等等。</p>
+<p>type:指定socket类型。常用的socket类型有，<strong>SOCK_STREAM、SOCK_DGRAM</strong>、SOCK_RAW、SOCK_PACKET、SOCK_SEQPACKET等等。</p>
+<p>protocol：故名思意，就是指定协议。常用的协议有，IPPROTO_TCP、IPPTOTO_UDP、IPPROTO_SCTP、IPPROTO_TIPC等。<strong>设置0会自动选择默认协议。</strong><br><a id="more"></a></p>
+<h3 id="1-2-绑定bind-函数"><a href="#1-2-绑定bind-函数" class="headerlink" title="1.2 绑定bind()函数"></a>1.2 绑定bind()函数</h3><p><code>int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);</code></p>
+<p>把一个ip地址和端口号组合赋给socket。</p>
+<p>sockfd：socket描述符。</p>
+<p>addr：协议地址。ipv4和ipv6略有不同。</p>
+<p>addrlen：地址长度。和addr配合使用，确认地址类型。</p>
+<p><strong>务必将地址转化为网络字节序再赋给socket。</strong></p>
+<p>通常服务器在启动的时候都会绑定一个众所周知的地址（如ip地址+端口号），用于提供服务，客户就可以通过它来接连服务器；而客户端就不用指定，有系统自动分配一个端口号和自身的ip地址组合。这就是为什么通常服务器端在listen之前会调用bind()，而客户端就不会调用，而是在connect()时由系统随机生成一个。</p>
+<h3 id="1-3-listen-、connect-函数"><a href="#1-3-listen-、connect-函数" class="headerlink" title="1.3 listen()、connect()函数"></a>1.3 listen()、connect()函数</h3><p><code>int listen(int sockfd, int backlog);</code></p>
+<p>作为服务器，绑定后要监听这个socket。第一个参数即为要监听的socket描述字,第二个参数为相应socket可以排队的最大连接个数。</p>
+<p>socket()函数创建的socket默认是一个主动类型的，listen函数将socket变为<strong>被动</strong>类型的，等待客户的连接请求。</p>
+<p><code>int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);</code></p>
+<p>connect函数的第一个参数即为客户端的socket描述字，第二参数为服务器的socket地址，第三个参数为socket地址的长度。</p>
+<h3 id="1-4-accept-函数"><a href="#1-4-accept-函数" class="headerlink" title="1.4 accept()函数"></a>1.4 accept()函数</h3><p><code>int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);</code></p>
+<p>accept返回值是由内核自动生成的一个全新的描述字，代表与返回客户的TCP连接。</p>
+<p>accept的第一个参数为服务器的socket描述字，是服务器开始调用socket()函数生成的，称为<strong>监听socket描述字</strong>；而accept函数返回的是<strong>已连接的socket描述字</strong>。一个服务器通常通常仅仅只创建一个监听socket描述字，它在该服务器的生命周期内一直存在。</p>
+<h3 id="1-5-read-、write-函数"><a href="#1-5-read-、write-函数" class="headerlink" title="1.5 read()、write()函数"></a>1.5 read()、write()函数</h3><p>read()、write()函数族可进行操作。</p>
+<p>另外可使用一般的文件操作函数来进行通讯，如epoll等。</p>
+<h3 id="1-6-close-函数"><a href="#1-6-close-函数" class="headerlink" title="1.6 close()函数"></a>1.6 close()函数</h3><p><code>int close(int fd);</code></p>
+<h2 id="2-socket连接"><a href="#2-socket连接" class="headerlink" title="2 socket连接"></a>2 socket连接</h2><p><img src="/images/socket客户端服务器通讯.jpg" alt></p>
 
       
     </div>
@@ -332,14 +348,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/03/08/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/08/Socket编程/" rel="prev" title="Socket编程">
-                Socket编程 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/08/C/" rel="prev" title="C++">
+                C++ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -454,7 +474,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Socket"><span class="nav-number">1.</span> <span class="nav-text">Socket</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Socket的基本操作"><span class="nav-number">1.1.</span> <span class="nav-text">1 Socket的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-创建Socket-socket-函数"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 创建Socket socket()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-绑定bind-函数"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 绑定bind()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-listen-、connect-函数"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 listen()、connect()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-accept-函数"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 accept()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-read-、write-函数"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5 read()、write()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-close-函数"><span class="nav-number">1.1.6.</span> <span class="nav-text">1.6 close()函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-socket连接"><span class="nav-number">1.2.</span> <span class="nav-text">2 socket连接</span></a></li></ol></li></ol></div>
             
 
           </div>
